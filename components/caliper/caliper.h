@@ -7,10 +7,11 @@ namespace esphome {
 namespace caliper_sensor {
 
 class CaliperSensor : public sensor::Sensor, public PollingComponent  {
-    void setup() override;
-    void update() override;
-    void dump_config() override;
-    float decode();
+    public:
+        void setup() override;
+        void loop() override;
+        void update() override;
+        float decode(u32_t p);
 };
 
 }
